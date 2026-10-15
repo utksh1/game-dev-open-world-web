@@ -1,0 +1,59 @@
+# Mission 1: Bank Heist
+id: mission_01
+name: "The Big Score"
+description: "Rob the downtown bank and escape with the money"
+difficulty: hard
+reward_money: 50000
+reward_xp: 1000
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Go to the bank"
+    target_position: 550, 0, 450
+    radius: 10
+    
+  - id: obj_02
+    type: interact
+    description: "Enter the bank"
+    target: "Bank"
+    
+  - id: obj_03
+    type: timer
+    description: "Steal the money (60 seconds)"
+    duration: 60
+    
+  - id: obj_04
+    type: survive
+    description: "Escape the police"
+    wanted_level: 3
+    duration: 120
+    
+  - id: obj_05
+    type: goto
+    description: "Reach the safehouse"
+    target_position: 200, 0, 200
+    radius: 15
+
+# Mission flow
+start_position: 500, 0, 500
+start_cutscene: "mission_01_intro"
+end_cutscene: "mission_01_outro"
+
+# Enemies
+enemies:
+  - type: police
+    count: 5
+    spawn_trigger: obj_03
+    spawn_position: 450, 0, 450
+    
+  - type: swat
+    count: 3
+    spawn_trigger: obj_04
+    spawn_position: 550, 0, 550
+
+# Required items
+required_items:
+  - weapon_pistol
+  - vehicle_car

@@ -1,0 +1,82 @@
+# Harbor District
+type: harbor
+size: 1000x800
+spawn_point: 500, 0, 400
+
+# Buildings
+building:
+  - name: "Shipping Warehouse"
+    position: 300, 0, 200
+    size: 100, 25, 80
+    type: warehouse
+    
+  - name: "Cargo Terminal"
+    position: 600, 0, 200
+    size: 80, 20, 60
+    type: terminal
+    
+  - name: "Harbor Office"
+    position: 500, 0, 400
+    size: 40, 15, 40
+    type: office
+    
+  - name: "Crane 1"
+    position: 350, 0, 100
+    size: 20, 50, 20
+    type: crane
+    
+  - name: "Crane 2"
+    position: 650, 0, 100
+    size: 20, 50, 20
+    type: crane
+
+# Docks
+dock:
+  - position: 300, 0, 50
+    size: 100, 5, 30
+    type: cargo_dock
+    
+  - position: 600, 0, 50
+    size: 100, 5, 30
+    type: cargo_dock
+
+# Roads
+road:
+  - start: 0, 0, 400
+    end: 1000, 0, 400
+    width: 10
+    lanes: 2
+    
+  - start: 500, 0, 400
+    end: 500, 0, 800
+    width: 8
+    lanes: 2
+
+# Water
+water:
+  - area: 0, 0, 0, 1000, 0, 150
+    type: ocean
+
+# Traffic spawn points
+traffic_spawn:
+  - position: 100, 0, 400
+    direction: 1, 0, 0
+    vehicle_type: truck
+  - position: 900, 0, 400
+    direction: -1, 0, 0
+    vehicle_type: truck
+
+# NPC spawn points
+npc_spawn:
+  - position: 300, 0, 200
+    count: 8
+    behavior: worker
+  - position: 600, 0, 200
+    count: 6
+    behavior: worker
+
+# Ambient
+time_of_day: any
+weather: foggy
+traffic_density: low
+pedestrian_density: low

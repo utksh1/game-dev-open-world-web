@@ -1,0 +1,40 @@
+# NPC: Gang Member
+id: npc_gang_member
+name: "Gang Member"
+type: hostile
+behavior: territorial
+
+# Appearance
+model: gang_member.obj
+texture: gang_outfit.png
+variants: 5
+
+# Stats
+health: 120
+speed_walk: 1.6
+speed_run: 4.5
+accuracy: 0.5
+
+# Equipment
+weapon: pistol
+armor: 25
+
+# Behavior
+territory: industrial
+aggression: high
+attack_on_sight: false
+defend_territory: true
+group_size: 2-4
+
+# Spawn
+spawn_weight: 10
+spawn_time: any
+spawn_locations:
+  - industrial
+  - gang_hideouts
+
+# AI
+aggression: high
+awareness: medium
+teamwork: true
+flee_health_threshold: 30

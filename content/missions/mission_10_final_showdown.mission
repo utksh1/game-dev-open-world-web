@@ -1,0 +1,107 @@
+# Mission 10: Final Showdown
+id: mission_10
+name: "Endgame"
+description: "Defend your empire from all enemies"
+difficulty: extreme
+reward_money: 150000
+reward_xp: 3000
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Return to your territory"
+    target_position: 300, 0, 300
+    radius: 20
+    
+  - id: obj_02
+    type: defend
+    description: "Defend against police assault"
+    duration: 120
+    waves: 4
+    
+  - id: obj_03
+    type: defend
+    description: "Defend against rival gangs"
+    duration: 120
+    waves: 4
+    
+  - id: obj_04
+    type: eliminate
+    description: "Eliminate the crime boss"
+    target_count: 1
+    target_type: boss
+    
+  - id: obj_05
+    type: survive
+    description: "Hold your ground"
+    duration: 180
+    wanted_level: 5
+
+# Mission flow
+start_position: 250, 0, 250
+start_cutscene: "final_showdown_intro"
+end_cutscene: "campaign_complete"
+
+# Allies
+allies:
+  - type: gang_member
+    count: 10
+    positions: territory
+    respawn: true
+    
+  - type: lieutenant
+    count: 3
+    positions:
+      - 280, 0, 280
+      - 320, 0, 280
+      - 300, 0, 320
+
+# Enemies
+enemies:
+  - type: police
+    count: 20
+    spawn_trigger: obj_02
+    waves: 4
+    spawn_interval: 30
+    
+  - type: swat
+    count: 15
+    spawn_trigger: obj_02
+    waves: 4
+    
+  - type: gang_member
+    count: 25
+    spawn_trigger: obj_03
+    waves: 4
+    spawn_interval: 30
+    
+  - type: boss
+    count: 1
+    spawn_trigger: obj_04
+    position: 300, 0, 300
+    health: 500
+    armor: 200
+    weapon: minigun
+    abilities:
+      - health_regen
+      - damage_boost
+      - summon_backup
+
+# Required items
+required_items:
+  - weapon_assault_rifle
+  - weapon_rocket_launcher
+  - body_armor_heavy
+
+# Victory conditions
+victory:
+  - eliminate_all_enemies
+  - survive_duration
+  - boss_defeated
+
+# Unlocks
+unlocks:
+  - ending_cutscene
+  - free_roam_mode
+  - new_game_plus

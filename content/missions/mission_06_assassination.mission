@@ -1,0 +1,79 @@
+# Mission 6: Assassination
+id: mission_06
+name: "Silent Takedown"
+description: "Eliminate the target without being detected"
+difficulty: hard
+reward_money: 30000
+reward_xp: 800
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Go to the vantage point"
+    target_position: 650, 20, 650
+    radius: 5
+    
+  - id: obj_02
+    type: observe
+    description: "Locate the target"
+    target: "VIP"
+    duration: 10
+    
+  - id: obj_03
+    type: eliminate
+    description: "Eliminate the target (stealth)"
+    target_count: 1
+    target_type: vip
+    stealth_required: true
+    
+  - id: obj_04
+    type: goto
+    description: "Escape to extraction point"
+    target_position: 800, 0, 800
+    radius: 10
+    stealth_recommended: true
+
+# Mission flow
+start_position: 600, 0, 600
+start_time: night
+stealth_mode: required
+
+# Target
+target:
+  name: "VIP Target"
+  position: 600, 0, 700
+  health: 100
+  bodyguards: 4
+  movement_pattern: patrol
+  patrol_route:
+    - 600, 0, 700
+    - 620, 0, 720
+    - 600, 0, 700
+
+# Enemies
+enemies:
+  - type: bodyguard
+    count: 4
+    positions:
+      - 595, 0, 695
+      - 605, 0, 695
+      - 595, 0, 705
+      - 605, 0, 705
+    alert_radius: 20
+    
+  - type: security
+    count: 6
+    spawn_trigger: alert
+    spawn_position: 600, 0, 650
+
+# Required items
+required_items:
+  - weapon_sniper_rifle
+
+# Bonus objectives
+bonus_objectives:
+  - description: "No alerts"
+    reward: 10000
+  - description: "Single shot kill"
+    reward: 5000

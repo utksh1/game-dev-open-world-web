@@ -1,0 +1,39 @@
+# NPC: Police Officer
+id: npc_police
+name: "Police Officer"
+type: law_enforcement
+behavior: patrol
+
+# Appearance
+model: police_officer.obj
+texture: police_uniform.png
+
+# Stats
+health: 150
+speed_walk: 1.8
+speed_run: 5.0
+accuracy: 0.7
+
+# Equipment
+weapon: pistol
+armor: 50
+vehicle: police_car
+
+# Behavior
+patrol_routes:
+  - downtown_route_1
+  - downtown_route_2
+response_time: 30
+pursuit_speed: 1.5
+backup_call_threshold: 2
+
+# Spawn
+spawn_weight: 20
+spawn_locations:
+  - police_station
+  - patrol_routes
+
+# AI
+aggression: medium
+awareness: high
+teamwork: true

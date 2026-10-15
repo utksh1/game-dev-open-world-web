@@ -1,0 +1,40 @@
+# Side Mission: Taxi Driver
+id: side_mission_taxi
+name: "Taxi Service"
+description: "Pick up and drop off passengers for money"
+type: repeatable
+difficulty: easy
+reward_money: 500-2000
+reward_xp: 50
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Pick up passenger"
+    target_position: random
+    radius: 5
+    
+  - id: obj_02
+    type: goto
+    description: "Drop off passenger"
+    target_position: random
+    radius: 10
+    time_limit: 120
+
+# Requirements
+required_items:
+  - vehicle_taxi
+
+# Bonus
+bonus:
+  - condition: fast_delivery
+    multiplier: 1.5
+  - condition: no_damage
+    multiplier: 1.2
+  - condition: smooth_driving
+    multiplier: 1.3
+
+# Repeatable
+max_repeats: unlimited
+cooldown: 0

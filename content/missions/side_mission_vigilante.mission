@@ -1,0 +1,54 @@
+# Side Mission: Vigilante
+id: side_mission_vigilante
+name: "Vigilante Justice"
+description: "Hunt down criminals for rewards"
+type: repeatable
+difficulty: medium
+reward_money: 1000-5000
+reward_xp: 100
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: locate
+    description: "Find the criminal"
+    target: criminal
+    search_radius: 200
+    
+  - id: obj_02
+    type: chase
+    description: "Chase the criminal"
+    target: criminal
+    max_distance: 100
+    
+  - id: obj_03
+    type: eliminate
+    description: "Neutralize the criminal"
+    target_count: 1
+    method: any
+
+# Criminal types
+criminals:
+  - type: car_thief
+    vehicle: stolen_car
+    wanted_level: 2
+    reward: 1000
+    
+  - type: armed_robber
+    weapon: pistol
+    wanted_level: 3
+    reward: 2500
+    
+  - type: gang_leader
+    weapon: assault_rifle
+    bodyguards: 2
+    wanted_level: 4
+    reward: 5000
+
+# Requirements
+required_items:
+  - vehicle_any
+
+# Repeatable
+max_repeats: unlimited
+cooldown: 60

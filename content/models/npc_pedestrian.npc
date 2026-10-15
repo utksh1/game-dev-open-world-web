@@ -1,0 +1,39 @@
+# NPC: Pedestrian
+id: npc_pedestrian
+name: "Civilian"
+type: pedestrian
+behavior: wander
+
+# Appearance
+model: pedestrian_male.obj
+texture: pedestrian_01.png
+variants: 10
+
+# Stats
+health: 100
+speed_walk: 1.5
+speed_run: 4.0
+
+# Behavior
+wander_radius: 50
+idle_time: 5-15
+flee_on_danger: true
+call_police_on_crime: true
+
+# Spawn
+spawn_weight: 100
+spawn_time: any
+spawn_locations:
+  - downtown
+  - industrial
+
+# Reactions
+reactions:
+  - trigger: gunshot
+    action: flee
+    radius: 30
+  - trigger: vehicle_crash
+    action: investigate
+    radius: 10
+  - trigger: player_bump
+    action: complain

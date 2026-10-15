@@ -1,0 +1,47 @@
+# Mission 2: Street Race
+id: mission_02
+name: "Midnight Run"
+description: "Win the illegal street race through downtown"
+difficulty: medium
+reward_money: 10000
+reward_xp: 500
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Go to the race start"
+    target_position: 100, 0, 500
+    radius: 10
+    
+  - id: obj_02
+    type: race
+    description: "Win the race"
+    checkpoints:
+      - position: 300, 0, 500
+      - position: 500, 0, 700
+      - position: 700, 0, 500
+      - position: 500, 0, 300
+      - position: 100, 0, 500
+    opponents: 3
+    time_limit: 180
+
+# Mission flow
+start_position: 50, 0, 500
+start_time: night
+
+# Opponents
+opponents:
+  - name: "Racer 1"
+    vehicle: sports_car
+    skill: high
+  - name: "Racer 2"
+    vehicle: sports_car
+    skill: medium
+  - name: "Racer 3"
+    vehicle: sports_car
+    skill: medium
+
+# Required items
+required_items:
+  - vehicle_sports_car

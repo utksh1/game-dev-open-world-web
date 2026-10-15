@@ -1,0 +1,72 @@
+# Campaign: Main Story
+id: campaign_main
+name: "Rise to Power"
+description: "Build your criminal empire from the ground up"
+
+# Mission sequence
+missions:
+  - id: mission_03
+    name: "Special Delivery"
+    unlock: start
+    required: true
+    
+  - id: mission_02
+    name: "Midnight Run"
+    unlock: mission_03
+    required: false
+    
+  - id: mission_01
+    name: "The Big Score"
+    unlock: mission_03
+    required: true
+    
+  - id: mission_05
+    name: "Hostage Situation"
+    unlock: mission_01
+    required: true
+    
+  - id: mission_04
+    name: "Turf War"
+    unlock: mission_05
+    required: true
+
+# Progression
+total_missions: 5
+required_missions: 4
+completion_reward: 100000
+completion_xp: 5000
+
+# Unlocks
+unlocks:
+  - mission_03: 
+      - weapon_pistol
+      - vehicle_sedan
+  - mission_02:
+      - vehicle_sports_car
+  - mission_01:
+      - weapon_assault_rifle
+      - safehouse_downtown
+  - mission_05:
+      - armor_vest
+      - weapon_sniper
+  - mission_04:
+      - territory_industrial
+      - gang_respect
+
+# Story progression
+story_beats:
+  - mission: mission_03
+    cutscene: intro_delivery
+    description: "Start as a delivery driver"
+    
+  - mission: mission_01
+    cutscene: bank_heist
+    description: "Make your first big score"
+    
+  - mission: mission_05
+    cutscene: rescue_ally
+    description: "Gain a loyal ally"
+    
+  - mission: mission_04
+    cutscene: territory_control
+    description: "Establish your territory"

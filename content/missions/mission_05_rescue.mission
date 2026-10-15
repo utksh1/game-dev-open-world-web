@@ -1,0 +1,65 @@
+# Mission 5: Rescue Mission
+id: mission_05
+name: "Hostage Situation"
+description: "Rescue the hostage from the warehouse"
+difficulty: medium
+reward_money: 15000
+reward_xp: 600
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Go to the warehouse"
+    target_position: 300, 0, 300
+    radius: 15
+    stealth_recommended: true
+    
+  - id: obj_02
+    type: eliminate
+    description: "Clear the guards (stealth)"
+    target_count: 4
+    enemy_type: guard
+    stealth_bonus: 5000
+    
+  - id: obj_03
+    type: interact
+    description: "Free the hostage"
+    target: "hostage"
+    
+  - id: obj_04
+    type: escort
+    description: "Escort hostage to safety"
+    target_position: 100, 0, 100
+    radius: 10
+    protect_target: true
+    
+  - id: obj_05
+    type: survive
+    description: "Defend until extraction"
+    duration: 45
+
+# Mission flow
+start_position: 250, 0, 250
+start_time: night
+stealth_mode: optional
+
+# Enemies
+enemies:
+  - type: guard
+    count: 4
+    patrol_routes:
+      - [280, 0, 280, 320, 0, 280]
+      - [280, 0, 320, 320, 0, 320]
+    alert_radius: 15
+    
+  - type: reinforcement
+    count: 6
+    spawn_trigger: obj_04
+    spawn_position: 350, 0, 350
+
+# Hostage
+hostage:
+  position: 300, 0, 300
+  health: 50
+  follow_player: true

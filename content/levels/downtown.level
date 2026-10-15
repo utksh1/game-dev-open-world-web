@@ -1,0 +1,58 @@
+# Downtown District
+type: urban
+size: 1000x1000
+spawn_point: 500, 0, 500
+
+# Buildings
+building:
+  - name: "Police Station"
+    position: 450, 0, 450
+    size: 50, 30, 50
+    type: police
+    
+  - name: "Bank"
+    position: 550, 0, 450
+    size: 40, 25, 40
+    type: bank
+    
+  - name: "Hospital"
+    position: 500, 0, 550
+    size: 60, 20, 60
+    type: hospital
+    
+  - name: "Gun Shop"
+    position: 400, 0, 500
+    size: 20, 15, 20
+    type: shop
+
+# Roads
+road:
+  - start: 0, 0, 500
+    end: 1000, 0, 500
+    width: 10
+    lanes: 4
+    
+  - start: 500, 0, 0
+    end: 500, 0, 1000
+    width: 10
+    lanes: 4
+
+# Traffic spawn points
+traffic_spawn:
+  - position: 100, 0, 500
+    direction: 1, 0, 0
+  - position: 900, 0, 500
+    direction: -1, 0, 0
+  - position: 500, 0, 100
+    direction: 0, 0, 1
+  - position: 500, 0, 900
+    direction: 0, 0, -1
+
+# NPC spawn points
+npc_spawn:
+  - position: 480, 0, 480
+    count: 5
+    behavior: pedestrian
+  - position: 520, 0, 520
+    count: 5
+    behavior: pedestrian

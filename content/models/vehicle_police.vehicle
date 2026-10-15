@@ -1,0 +1,40 @@
+# Vehicle: Police Car
+id: vehicle_police
+name: "Police Cruiser"
+type: car
+class: police
+
+# Physics
+mass: 1600
+max_speed: 150
+acceleration: 12.0
+braking: 15.0
+handling: 8.0
+traction: 0.85
+
+# Dimensions
+length: 4.8
+width: 1.9
+height: 1.6
+
+# Model
+model: police_car.obj
+texture: police_car_diffuse.png
+
+# Special features
+siren: true
+lights: true
+radio: police_radio
+
+# Spawn locations
+spawn_locations:
+  - 450, 0, 450  # Police station
+
+# Stats
+durability: 120
+fuel_capacity: 60
+seats: 4
+trunk_space: 200
+
+# Cost
+price: 0  # Not purchasable

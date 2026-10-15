@@ -1,0 +1,36 @@
+# Vehicle: Truck
+id: vehicle_truck
+name: "Heavy Truck"
+type: truck
+class: commercial
+
+# Physics
+mass: 8000
+max_speed: 80
+acceleration: 3.0
+braking: 8.0
+handling: 3.0
+traction: 0.85
+
+# Dimensions
+length: 8.0
+width: 2.5
+height: 3.5
+
+# Model
+model: truck.obj
+texture: truck_diffuse.png
+
+# Spawn locations
+spawn_locations:
+  - 300, 0, 200  # Harbor
+  - 400, 0, 500  # Industrial
+
+# Stats
+durability: 250
+fuel_capacity: 150
+seats: 2
+trunk_space: 5000
+
+# Cost
+price: 50000

@@ -1,0 +1,95 @@
+# Mission 9: The Heist
+id: mission_09
+name: "The Big One"
+description: "Execute the ultimate heist"
+difficulty: very_hard
+reward_money: 100000
+reward_xp: 2000
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Drive to the target"
+    target_position: 550, 0, 450
+    radius: 20
+    crew: true
+    
+  - id: obj_02
+    type: interact
+    description: "Breach the vault"
+    target: "vault_door"
+    duration: 30
+    
+  - id: obj_03
+    type: collect
+    description: "Grab the money"
+    items:
+      - cash: 1000000
+    duration: 60
+    
+  - id: obj_04
+    type: survive
+    description: "Fight off security"
+    duration: 90
+    waves: 3
+    
+  - id: obj_05
+    type: goto
+    description: "Reach the helicopter"
+    target_position: 600, 30, 500
+    radius: 10
+    
+  - id: obj_06
+    type: escape
+    description: "Escape the city"
+    wanted_level: 5
+    duration: 180
+
+# Mission flow
+start_position: 200, 0, 200
+start_cutscene: "heist_briefing"
+end_cutscene: "heist_success"
+
+# Crew
+crew:
+  - name: "Driver"
+    role: driver
+    skill: high
+  - name: "Gunman"
+    role: combat
+    skill: high
+  - name: "Hacker"
+    role: support
+    skill: high
+
+# Enemies
+enemies:
+  - type: security
+    count: 10
+    spawn_trigger: obj_02
+    waves: 2
+    
+  - type: swat
+    count: 15
+    spawn_trigger: obj_04
+    waves: 3
+    
+  - type: helicopter
+    count: 2
+    spawn_trigger: obj_06
+
+# Required items
+required_items:
+  - weapon_assault_rifle
+  - body_armor
+  - getaway_vehicle
+
+# Bonus objectives
+bonus_objectives:
+  - description: "No crew casualties"
+    reward: 25000
+  - description: "Complete under 15 minutes"
+    reward: 15000
+  - description: "Stealth until vault"
+    reward: 10000

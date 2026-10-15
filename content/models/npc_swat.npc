@@ -1,0 +1,41 @@
+# NPC: SWAT Officer
+id: npc_swat
+name: "SWAT Officer"
+type: law_enforcement
+behavior: assault
+
+# Appearance
+model: swat_officer.obj
+texture: swat_uniform.png
+
+# Stats
+health: 200
+speed_walk: 2.0
+speed_run: 5.5
+accuracy: 0.85
+
+# Equipment
+weapon: assault_rifle
+armor: 100
+equipment:
+  - flashbang
+  - breaching_charge
+
+# Behavior
+formation: tactical
+cover_usage: high
+aggression: high
+teamwork: very_high
+
+# Spawn
+spawn_weight: 5
+spawn_trigger: wanted_level_4
+spawn_locations:
+  - police_station
+  - swat_van
+
+# AI
+aggression: very_high
+awareness: very_high
+teamwork: true
+tactics: advanced

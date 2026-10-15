@@ -1,0 +1,44 @@
+# NPC: Driver
+id: npc_driver
+name: "Driver"
+type: traffic
+behavior: drive
+
+# Appearance
+model: driver.obj
+texture: casual_clothes.png
+variants: 8
+
+# Stats
+health: 100
+driving_skill: 0.7
+
+# Vehicle preferences
+vehicles:
+  - sedan: 60%
+  - sports_car: 20%
+  - van: 15%
+  - motorcycle: 5%
+
+# Behavior
+follow_traffic_rules: true
+speed_limit_adherence: 0.8
+lane_change_frequency: low
+honk_on_block: true
+flee_on_danger: true
+
+# Spawn
+spawn_weight: 80
+spawn_time: any
+spawn_locations:
+  - traffic_spawns
+
+# Reactions
+reactions:
+  - trigger: blocked
+    action: honk
+    wait_time: 5
+  - trigger: crash
+    action: exit_vehicle
+  - trigger: gunfire
+    action: flee

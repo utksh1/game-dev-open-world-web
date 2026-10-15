@@ -1,0 +1,36 @@
+# Vehicle: Van
+id: vehicle_van
+name: "Delivery Van"
+type: van
+class: commercial
+
+# Physics
+mass: 2500
+max_speed: 90
+acceleration: 5.0
+braking: 10.0
+handling: 5.0
+traction: 0.75
+
+# Dimensions
+length: 5.5
+width: 2.0
+height: 2.5
+
+# Model
+model: van.obj
+texture: van_diffuse.png
+
+# Spawn locations
+spawn_locations:
+  - 400, 0, 500
+  - 300, 0, 300
+
+# Stats
+durability: 150
+fuel_capacity: 80
+seats: 3
+trunk_space: 1000
+
+# Cost
+price: 30000

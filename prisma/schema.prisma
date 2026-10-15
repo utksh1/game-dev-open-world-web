@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============================================================
+// GTA-like Open World Engine — save games & leaderboard
+// Fixes the documented gap: "Save/Load: Binary save system for
+// game state persistence" (the C++ SaveSystem was never called
+// and wrote to a non-existent saves/ directory).
+// ============================================================
+model SaveGame {
+  id                  String   @id @default(cuid())
+  slot                Int      @unique
+  playerName          String   @default("Player")
+  levelId             String   @default("downtown")
+  money               Int      @default(500)
+  health              Int      @default(100)
+  armor               Int      @default(0)
+  xp                  Int      @default(0)
+  wantedLevel         Int      @default(0)
+  positionX           Float    @default(500)
+  positionY           Float    @default(0)
+  positionZ           Float    @default(500)
+  stateJson           String   @default("{}")
+  missionsCompletedCount Int  @default(0)
+  campaignProgress    Float    @default(0)
+  playTimeSec         Float    @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([updatedAt])
+  @@index([money])
+}

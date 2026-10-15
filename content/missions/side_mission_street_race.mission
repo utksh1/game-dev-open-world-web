@@ -1,0 +1,53 @@
+# Side Mission: Street Races
+id: side_mission_street_race
+name: "Underground Racing"
+description: "Compete in illegal street races"
+type: repeatable
+difficulty: medium
+reward_money: 5000-20000
+reward_xp: 200
+
+# Race types
+races:
+  - name: "Downtown Circuit"
+    laps: 3
+    checkpoints: 8
+    opponents: 3
+    reward: 5000
+    
+  - name: "Highway Sprint"
+    laps: 1
+    checkpoints: 5
+    opponents: 5
+    reward: 10000
+    
+  - name: "Mountain Pass"
+    laps: 2
+    checkpoints: 12
+    opponents: 4
+    reward: 15000
+    
+  - name: "City Tour"
+    laps: 2
+    checkpoints: 20
+    opponents: 7
+    reward: 20000
+
+# Requirements
+required_items:
+  - vehicle_sports_car
+
+# Bonus
+bonus:
+  - condition: first_place
+    multiplier: 1.0
+  - condition: second_place
+    multiplier: 0.5
+  - condition: third_place
+    multiplier: 0.25
+  - condition: perfect_race
+    bonus: 5000
+
+# Repeatable
+max_repeats: unlimited
+cooldown: 120

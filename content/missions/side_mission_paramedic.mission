@@ -1,0 +1,53 @@
+# Side Mission: Paramedic
+id: side_mission_paramedic
+name: "Emergency Response"
+description: "Save injured civilians"
+type: repeatable
+difficulty: easy
+reward_money: 300-1500
+reward_xp: 75
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Respond to emergency"
+    target_position: random
+    radius: 10
+    time_limit: 60
+    
+  - id: obj_02
+    type: interact
+    description: "Treat the patient"
+    target: injured_civilian
+    duration: 5
+    
+  - id: obj_03
+    type: goto
+    description: "Transport to hospital"
+    target_position: hospital
+    radius: 15
+    time_limit: 90
+
+# Requirements
+required_items:
+  - vehicle_ambulance
+
+# Patient conditions
+conditions:
+  - minor_injury: 300
+  - moderate_injury: 800
+  - critical_injury: 1500
+
+# Bonus
+bonus:
+  - condition: fast_response
+    multiplier: 1.5
+  - condition: smooth_driving
+    multiplier: 1.2
+  - condition: patient_stable
+    bonus: 500
+
+# Repeatable
+max_repeats: unlimited
+cooldown: 0

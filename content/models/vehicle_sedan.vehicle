@@ -1,0 +1,37 @@
+# Vehicle: Sedan
+id: vehicle_sedan
+name: "City Sedan"
+type: car
+class: sedan
+
+# Physics
+mass: 1500
+max_speed: 120
+acceleration: 8.0
+braking: 12.0
+handling: 7.0
+traction: 0.8
+
+# Dimensions
+length: 4.5
+width: 1.8
+height: 1.5
+
+# Model
+model: sedan.obj
+texture: sedan_diffuse.png
+
+# Spawn locations
+spawn_locations:
+  - 480, 0, 480
+  - 520, 0, 520
+  - 450, 0, 550
+
+# Stats
+durability: 100
+fuel_capacity: 50
+seats: 4
+trunk_space: 300
+
+# Cost
+price: 15000

@@ -1,0 +1,40 @@
+# Vehicle: Helicopter
+id: vehicle_helicopter
+name: "News Chopper"
+type: helicopter
+class: aircraft
+
+# Physics
+mass: 1800
+max_speed: 150
+acceleration: 10.0
+vertical_speed: 8.0
+handling: 6.0
+traction: 1.0
+
+# Dimensions
+length: 12.0
+width: 3.0
+height: 3.5
+
+# Model
+model: helicopter.obj
+texture: helicopter_diffuse.png
+
+# Flight
+max_altitude: 500
+hover_height: 50
+rotor_speed: 1200
+
+# Spawn locations
+spawn_locations:
+  - 600, 30, 500  # Helipad downtown
+
+# Stats
+durability: 100
+fuel_capacity: 200
+seats: 4
+trunk_space: 150
+
+# Cost
+price: 250000

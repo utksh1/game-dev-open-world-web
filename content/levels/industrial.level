@@ -1,0 +1,41 @@
+# Industrial Zone
+type: industrial
+size: 800x800
+spawn_point: 400, 0, 400
+
+# Buildings
+building:
+  - name: "Warehouse 1"
+    position: 300, 0, 300
+    size: 80, 20, 80
+    type: warehouse
+    
+  - name: "Warehouse 2"
+    position: 500, 0, 300
+    size: 80, 20, 80
+    type: warehouse
+    
+  - name: "Factory"
+    position: 400, 0, 500
+    size: 100, 30, 100
+    type: factory
+
+# Roads
+road:
+  - start: 0, 0, 400
+    end: 800, 0, 400
+    width: 8
+    lanes: 2
+
+# Traffic spawn points
+traffic_spawn:
+  - position: 100, 0, 400
+    direction: 1, 0, 0
+  - position: 700, 0, 400
+    direction: -1, 0, 0
+
+# NPC spawn points
+npc_spawn:
+  - position: 350, 0, 350
+    count: 3
+    behavior: worker

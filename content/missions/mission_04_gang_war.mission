@@ -1,0 +1,70 @@
+# Mission 4: Gang War
+id: mission_04
+name: "Turf War"
+description: "Defend your territory from rival gang"
+difficulty: hard
+reward_money: 25000
+reward_xp: 750
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Go to your turf"
+    target_position: 300, 0, 300
+    radius: 20
+    
+  - id: obj_02
+    type: eliminate
+    description: "Eliminate gang members (Wave 1)"
+    target_count: 5
+    enemy_type: gang_member
+    
+  - id: obj_03
+    type: eliminate
+    description: "Eliminate gang members (Wave 2)"
+    target_count: 8
+    enemy_type: gang_member
+    
+  - id: obj_04
+    type: eliminate
+    description: "Eliminate the gang leader"
+    target_count: 1
+    enemy_type: gang_leader
+    
+  - id: obj_05
+    type: survive
+    description: "Hold the position"
+    duration: 60
+
+# Mission flow
+start_position: 250, 0, 250
+allies: 3
+
+# Enemies
+enemies:
+  - type: gang_member
+    count: 5
+    spawn_trigger: obj_02
+    spawn_positions:
+      - 350, 0, 350
+      - 320, 0, 380
+      
+  - type: gang_member
+    count: 8
+    spawn_trigger: obj_03
+    spawn_positions:
+      - 280, 0, 280
+      - 320, 0, 320
+      
+  - type: gang_leader
+    count: 1
+    spawn_trigger: obj_04
+    spawn_position: 300, 0, 300
+    health: 200
+    weapon: assault_rifle
+
+# Required items
+required_items:
+  - weapon_assault_rifle
+  - armor_vest

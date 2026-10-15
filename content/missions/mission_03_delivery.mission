@@ -1,0 +1,52 @@
+# Mission 3: Delivery Driver
+id: mission_03
+name: "Special Delivery"
+description: "Deliver packages across the city without damage"
+difficulty: easy
+reward_money: 5000
+reward_xp: 250
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Pick up the van"
+    target_position: 400, 0, 500
+    radius: 5
+    
+  - id: obj_02
+    type: goto
+    description: "Deliver to location 1"
+    target_position: 600, 0, 600
+    radius: 10
+    time_limit: 60
+    
+  - id: obj_03
+    type: goto
+    description: "Deliver to location 2"
+    target_position: 300, 0, 700
+    radius: 10
+    time_limit: 60
+    
+  - id: obj_04
+    type: goto
+    description: "Deliver to location 3"
+    target_position: 700, 0, 300
+    radius: 10
+    time_limit: 60
+    
+  - id: obj_05
+    type: goto
+    description: "Return the van"
+    target_position: 400, 0, 500
+    radius: 10
+
+# Mission flow
+start_position: 380, 0, 480
+vehicle_health_requirement: 70
+
+# Failure conditions
+fail_conditions:
+  - vehicle_destroyed
+  - time_expired
+  - vehicle_health_below: 30

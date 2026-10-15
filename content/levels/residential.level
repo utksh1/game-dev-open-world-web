@@ -1,0 +1,77 @@
+# Residential District
+type: residential
+size: 1200x1200
+spawn_point: 600, 0, 600
+
+# Buildings
+building:
+  - name: "Apartment Complex 1"
+    position: 500, 0, 500
+    size: 40, 40, 40
+    type: apartment
+    
+  - name: "Apartment Complex 2"
+    position: 700, 0, 500
+    size: 40, 40, 40
+    type: apartment
+    
+  - name: "Shopping Mall"
+    position: 600, 0, 700
+    size: 100, 20, 80
+    type: mall
+    
+  - name: "Gas Station"
+    position: 550, 0, 550
+    size: 20, 10, 20
+    type: gas_station
+    
+  - name: "Parking Garage"
+    position: 650, 0, 650
+    size: 50, 30, 50
+    type: parking
+
+# Roads
+road:
+  - start: 0, 0, 600
+    end: 1200, 0, 600
+    width: 12
+    lanes: 4
+    
+  - start: 600, 0, 0
+    end: 600, 0, 1200
+    width: 12
+    lanes: 4
+    
+  - start: 500, 0, 500
+    end: 700, 0, 700
+    width: 8
+    lanes: 2
+
+# Traffic spawn points
+traffic_spawn:
+  - position: 100, 0, 600
+    direction: 1, 0, 0
+  - position: 1100, 0, 600
+    direction: -1, 0, 0
+  - position: 600, 0, 100
+    direction: 0, 0, 1
+  - position: 600, 0, 1100
+    direction: 0, 0, -1
+
+# NPC spawn points
+npc_spawn:
+  - position: 600, 0, 700
+    count: 15
+    behavior: shopper
+  - position: 550, 0, 550
+    count: 5
+    behavior: pedestrian
+  - position: 650, 0, 650
+    count: 8
+    behavior: pedestrian
+
+# Ambient
+time_of_day: any
+weather: clear
+traffic_density: high
+pedestrian_density: high

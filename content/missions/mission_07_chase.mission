@@ -1,0 +1,64 @@
+# Mission 7: Chase
+id: mission_07
+name: "High Speed Pursuit"
+description: "Chase down and stop the escaping criminals"
+difficulty: medium
+reward_money: 12000
+reward_xp: 550
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Get a vehicle"
+    target_position: 500, 0, 500
+    radius: 20
+    
+  - id: obj_02
+    type: chase
+    description: "Chase the criminals"
+    target: "criminal_vehicle"
+    max_distance: 100
+    duration: 120
+    
+  - id: obj_03
+    type: destroy
+    description: "Stop their vehicle"
+    target: "criminal_vehicle"
+    method: damage
+    
+  - id: obj_04
+    type: eliminate
+    description: "Neutralize the criminals"
+    target_count: 3
+    enemy_type: criminal
+
+# Mission flow
+start_position: 480, 0, 480
+start_cutscene: "chase_start"
+
+# Target vehicle
+target_vehicle:
+  type: sports_car
+  start_position: 550, 0, 550
+  driver_skill: high
+  escape_route:
+    - 550, 0, 550
+    - 700, 0, 700
+    - 900, 0, 500
+    - 700, 0, 300
+    - 500, 0, 500
+  speed_multiplier: 1.2
+
+# Enemies
+enemies:
+  - type: criminal
+    count: 3
+    vehicle: sports_car
+    weapons: smg
+    shoot_while_driving: true
+
+# Failure conditions
+fail_conditions:
+  - target_escaped
+  - lost_target_for: 30

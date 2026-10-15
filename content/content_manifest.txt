@@ -1,0 +1,105 @@
+# Content Manifest
+version: 1.0
+game: "GTA Clone"
+
+# Levels
+levels:
+  - id: downtown
+    file: levels/downtown.level
+    name: "Downtown District"
+    size: large
+    
+  - id: industrial
+    file: levels/industrial.level
+    name: "Industrial Zone"
+    size: medium
+    
+  - id: residential
+    file: levels/residential.level
+    name: "Residential District"
+    size: large
+    
+  - id: harbor
+    file: levels/harbor.level
+    name: "Harbor District"
+    size: medium
+
+# Campaign
+campaign:
+  - id: main_story
+    file: missions/campaign_main.campaign
+    name: "Rise to Power"
+    missions: 10
+
+# Main Missions
+missions:
+  - id: mission_01
+    file: missions/mission_01_bank_heist.mission
+  - id: mission_02
+    file: missions/mission_02_street_race.mission
+  - id: mission_03
+    file: missions/mission_03_delivery.mission
+  - id: mission_04
+    file: missions/mission_04_gang_war.mission
+  - id: mission_05
+    file: missions/mission_05_rescue.mission
+  - id: mission_06
+    file: missions/mission_06_assassination.mission
+  - id: mission_07
+    file: missions/mission_07_chase.mission
+  - id: mission_08
+    file: missions/mission_08_heist_setup.mission
+  - id: mission_09
+    file: missions/mission_09_the_heist.mission
+  - id: mission_10
+    file: missions/mission_10_final_showdown.mission
+
+# Side Missions
+side_missions:
+  - id: taxi
+    file: missions/side_mission_taxi.mission
+  - id: vigilante
+    file: missions/side_mission_vigilante.mission
+  - id: street_race
+    file: missions/side_mission_street_race.mission
+  - id: paramedic
+    file: missions/side_mission_paramedic.mission
+
+# Vehicles
+vehicles:
+  - id: sedan
+    file: models/vehicle_sedan.vehicle
+  - id: sports_car
+    file: models/vehicle_sports_car.vehicle
+  - id: motorcycle
+    file: models/vehicle_motorcycle.vehicle
+  - id: van
+    file: models/vehicle_van.vehicle
+  - id: truck
+    file: models/vehicle_truck.vehicle
+  - id: police
+    file: models/vehicle_police.vehicle
+  - id: helicopter
+    file: models/vehicle_helicopter.vehicle
+
+# NPCs
+npcs:
+  - id: pedestrian
+    file: models/npc_pedestrian.npc
+  - id: driver
+    file: models/npc_driver.npc
+  - id: police
+    file: models/npc_police.npc
+  - id: gang_member
+    file: models/npc_gang_member.npc
+  - id: swat
+    file: models/npc_swat.npc
+
+# Total content
+statistics:
+  levels: 4
+  main_missions: 10
+  side_missions: 4
+  vehicles: 7
+  npc_types: 5
+  total_files: 30

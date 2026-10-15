@@ -1,0 +1,64 @@
+# Mission 8: Heist Setup
+id: mission_08
+name: "Preparation"
+description: "Gather equipment and crew for the big heist"
+difficulty: easy
+reward_money: 8000
+reward_xp: 400
+
+# Objectives
+objectives:
+  - id: obj_01
+    type: goto
+    description: "Meet the crew"
+    target_position: 300, 0, 300
+    radius: 10
+    
+  - id: obj_02
+    type: goto
+    description: "Steal the getaway vehicle"
+    target_position: 650, 0, 650
+    radius: 15
+    
+  - id: obj_03
+    type: steal
+    description: "Take the vehicle"
+    target: "getaway_van"
+    
+  - id: obj_04
+    type: goto
+    description: "Pick up weapons"
+    target_position: 400, 0, 500
+    radius: 10
+    
+  - id: obj_05
+    type: collect
+    description: "Load the weapons"
+    items:
+      - assault_rifle: 4
+      - body_armor: 4
+    
+  - id: obj_06
+    type: goto
+    description: "Return to safehouse"
+    target_position: 200, 0, 200
+    radius: 15
+
+# Mission flow
+start_position: 250, 0, 250
+
+# NPCs
+allies:
+  - name: "Driver"
+    position: 300, 0, 300
+    role: driver
+  - name: "Gunman"
+    position: 305, 0, 300
+    role: gunman
+  - name: "Hacker"
+    position: 300, 0, 305
+    role: hacker
+
+# Unlocks
+unlocks:
+  - mission_09

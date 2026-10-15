@@ -1,0 +1,36 @@
+# Vehicle: Motorcycle
+id: vehicle_motorcycle
+name: "Street Bike"
+type: motorcycle
+class: sport_bike
+
+# Physics
+mass: 200
+max_speed: 180
+acceleration: 20.0
+braking: 15.0
+handling: 10.0
+traction: 0.7
+
+# Dimensions
+length: 2.1
+width: 0.8
+height: 1.2
+
+# Model
+model: motorcycle.obj
+texture: motorcycle_diffuse.png
+
+# Spawn locations
+spawn_locations:
+  - 500, 0, 480
+  - 480, 0, 500
+
+# Stats
+durability: 50
+fuel_capacity: 15
+seats: 2
+trunk_space: 0
+
+# Cost
+price: 25000
